@@ -25,7 +25,7 @@ public class Dialog_2 extends DialogFragment {
     public OnInputSelected mOnInputSelected;
 
 
-    String type ;
+    String type = "male" ;
 
 
     public interface OnInputSelected{
@@ -63,9 +63,6 @@ public class Dialog_2 extends DialogFragment {
                 }
                 else if(checkedId==R.id.cat_1){
                     type = "cat";
-
-                }
-                else{
 
                 }
             }

@@ -5,21 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <SeekBar
-        android:id="@+id/seekBar"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="263dp"
-        android:layout_height="76dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="88dp"
-        android:layout_marginEnd="50dp"
-        android:max="3"
-        android:progress="0"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <com.google.android.material.button.MaterialButtonToggleGroup
         android:id="@+id/toggleButtonGroup"
         android:layout_width="wrap_content"
@@ -38,6 +23,7 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/jua"
             android:text="남자"
             tools:layout_editor_absoluteX="74dp"
             tools:layout_editor_absoluteY="277dp" />
@@ -47,6 +33,7 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/jua"
             android:text="여자"
             tools:layout_editor_absoluteX="161dp"
             tools:layout_editor_absoluteY="277dp" />
@@ -56,6 +43,7 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:fontFamily="@font/jua"
             android:text="고양이"
             tools:layout_editor_absoluteX="249dp"
             tools:layout_editor_absoluteY="277dp" />
@@ -63,61 +51,14 @@
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
     <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="44dp"
-        android:text="16강"
-        app:layout_constraintBottom_toBottomOf="@+id/seekBar"
-        app:layout_constraintEnd_toStartOf="@+id/textView11" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
-        android:text="8강"
-        app:layout_constraintBottom_toBottomOf="@+id/seekBar"
-        app:layout_constraintEnd_toStartOf="@+id/textView12" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="56dp"
-        android:text="4강"
-        app:layout_constraintBottom_toBottomOf="@+id/seekBar"
-        app:layout_constraintEnd_toStartOf="@+id/textView13" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="80dp"
-        android:text="결승"
-        app:layout_constraintBottom_toBottomOf="@+id/seekBar"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="56dp"
-        android:text="시작 라운드"
-        app:layout_constraintBottom_toBottomOf="@+id/seekBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
+        android:fontFamily="@font/jua"
         android:text="월드컵 종류"
+        android:textColor="@color/orange"
         app:layout_constraintBottom_toTopOf="@+id/toggleButtonGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -129,10 +70,88 @@
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="200dp"
+        android:backgroundTint="@color/red"
+        android:fontFamily="@font/jua"
         android:text="설정 완료"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="404dp"
+        android:layout_height="201dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jua"
+            android:text="시작 라운드"
+            android:textColor="@color/orange"
+            app:layout_constraintBottom_toTopOf="@+id/seekBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="263dp"
+            android:layout_height="76dp"
+            android:max="3"
+            android:progress="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="68dp"
+            android:fontFamily="@font/jua"
+            android:text="결승"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jua"
+            android:text="16강"
+            app:layout_constraintEnd_toStartOf="@+id/textView11"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:fontFamily="@font/jua"
+            android:text="8강"
+            app:layout_constraintEnd_toStartOf="@+id/textView12"
+            app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:fontFamily="@font/jua"
+            android:text="4강"
+            app:layout_constraintEnd_toStartOf="@+id/textView13"
+            app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

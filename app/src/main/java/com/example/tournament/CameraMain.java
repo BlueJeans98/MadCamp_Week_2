@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -60,6 +61,7 @@ public class CameraMain extends Fragment implements Dialog_2.OnInputSelected {
         imageView = root.findViewById(R.id.imageview);
         context = getContext();
         choose = root.findViewById(R.id.choose);
+        imageView.setImageResource(R.drawable.basic);
 
         getParentFragmentManager().setFragmentResultListener("key", this, new FragmentResultListener() {
             @Override
@@ -99,6 +101,8 @@ public class CameraMain extends Fragment implements Dialog_2.OnInputSelected {
             public void onClick(View view){
                 if (arr[0] != null && arr[1]!= null) //arr[0] 계정, arr[1] type
                 FileUploadUtils.send2Server(sendFile,arr[0],arr[1]);
+                Toast.makeText(context, "사진이 등록되었습니다.", Toast.LENGTH_SHORT).show();
+                btn_push.setEnabled(false);
             }
         });
 
@@ -145,7 +149,21 @@ public class CameraMain extends Fragment implements Dialog_2.OnInputSelected {
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(),uri);
                 imageView.setImageBitmap(bitmap);
-//
+                ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                bitmap.compress(Bitmap.CompressFormat.PNG, 0 /*ignored for PNG*/, bos);
+                bitmapdata = bos.toByteArray();
+                try {
+                    sendFile = new File(context.getCacheDir(),"image");
+                    sendFile.createNewFile();
+                    fos = new FileOutputStream(sendFile);
+                    fos.write(bitmapdata);
+                    fos.flush();
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                btn_push.setEnabled(true);
+                imageView.setImageBitmap(bitmap);
 
             } catch (IOException e) {
                 e.printStackTrace();

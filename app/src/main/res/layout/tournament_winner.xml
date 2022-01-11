@@ -44,6 +44,7 @@
         android:layout_marginTop="40dp"
         android:fontFamily="@font/jua"
         android:text="다시 해볼까?"
+        android:backgroundTint="@color/orange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
